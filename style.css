@@ -198,6 +198,7 @@ h1 {
 .hidden-widget.linechat-widget .chatbox {
   -webkit-transform: scale(0) !important;
           transform: scale(0) !important;
+  pointer-events: none;
 }
 
 .hidden-widget.linechat-widget .linelogo {
