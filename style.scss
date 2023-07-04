@@ -177,11 +177,11 @@ h1 {
 .hidden-widget.linechat-widget {
     .chatbox {
         transform: scale(0) !important;
-        pointer-events: none;
+
     }
 
     a {
-        pointer-events: none;
+        display: none;
     }
 
     .linelogo {
