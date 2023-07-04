@@ -47,7 +47,7 @@
       visitors throughout their journey on the website.
     </p>
 
-    <div class="linechat-widget">
+    <div class="linechat-widget" id="target-div">
       <a href="https://line.me/ti/p/EPQdrzw_PT">
         <div class="chatbox">
           <div class="chattop">
@@ -73,21 +73,6 @@
                 <span class="read">Read</span>
               </div>
             </div>
-            <!-- <div class="bubble-wrap">
-              <div class="bubble-logo">
-                <img src="images/logo.jpg" alt="" />
-              </div>
-              <div class="bubble">
-                <p class="name">Piyawut</p>
-                <div>
-                  <img src="images/bubble-left.svg" alt="" class="arrow" />
-                  นี่คือข้อความจากไลน์
-                </div>
-                <span class="current-time"></span>
-
-                <span class="read">Read</span>
-              </div>
-            </div> -->
           </div>
           <div class="chatbottom">
             <img src="images/bottom-baricon.svg" alt="" />
@@ -95,9 +80,10 @@
         </div>
       </a>
 
-      <div class="chaticon">
+      <div class="chaticon" id="toggle-class-button">
         <div class="chatbutton">
-          <img src="images/arrowdown.svg" alt="" />
+          <img src="images/arrowdown.svg" alt="" class="arrow-down" />
+          <img src="images/linelogo.svg" alt="" class="linelogo" />
         </div>
       </div>
     </div>
@@ -161,6 +147,15 @@
 
         // Set the background color of the body element
         document.body.style.backgroundColor = randomColor;
+      });
+    </script>
+
+    <script>
+      const toggleButton = document.getElementById("toggle-class-button");
+      const targetDiv = document.getElementById("target-div");
+
+      toggleButton.addEventListener("click", function () {
+        targetDiv.classList.toggle("hidden-widget");
       });
     </script>
   </body>
