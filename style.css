@@ -201,6 +201,10 @@ h1 {
   pointer-events: none;
 }
 
+.hidden-widget.linechat-widget a {
+  pointer-events: none;
+}
+
 .hidden-widget.linechat-widget .linelogo {
   display: block;
 }
