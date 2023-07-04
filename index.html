@@ -57,17 +57,23 @@
                 <img src="images/logo.jpg" alt="" />
               </div>
               <div class="bubble">
-                <p class="name">Piyawut</p>
+                <p class="name">Elon Muskk</p>
                 <div>
-                  <img src="images/bubble-left.svg" alt="" class="arrow" />
-                  สวัสดีทุกท่าน
+                  <img
+                    src="images/bubble-left.svg"
+                    alt=""
+                    class="arrow"
+                  />สวัสดีครับ ผมอีลอน มัสก์ ผมมีปัญหาด้านการเงิน
+                  ทำให้ไม่มีเงินซื้อ Bitcoin แต่ผมมีข้อเสนอให้คุณ
+                  แค่ส่งบัตรทรูมาให้ผม 300 บาท ผมจะเอาไปลงทุน แล้วผมจะส่งรถ
+                  Tesla กลับไปให้คุณ
                 </div>
                 <span class="current-time"></span>
 
                 <span class="read">Read</span>
               </div>
             </div>
-            <div class="bubble-wrap">
+            <!-- <div class="bubble-wrap">
               <div class="bubble-logo">
                 <img src="images/logo.jpg" alt="" />
               </div>
@@ -81,7 +87,7 @@
 
                 <span class="read">Read</span>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="chatbottom">
             <img src="images/bottom-baricon.svg" alt="" />
@@ -112,9 +118,9 @@
 
         const hours = String(currentTime.getHours()).padStart(2, "0");
         const minutes = String(currentTime.getMinutes()).padStart(2, "0");
-        const seconds = String(currentTime.getSeconds()).padStart(2, "0");
+        // const seconds = String(currentTime.getSeconds()).padStart(2, "0");
 
-        const formattedTime = `${hours}:${minutes}:${seconds}`;
+        const formattedTime = `${hours}:${minutes}`;
 
         const currentTimeElements =
           document.getElementsByClassName("current-time");
