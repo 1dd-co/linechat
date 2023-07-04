@@ -4,9 +4,158 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LINE CHAT</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>LINE CHAT IS AWESOME</h1>
-    <img src="images/chatbox.png" alt="" />
+    <h1>LINE CHAT WIDGET ON YOUR WEBSITE</h1>
+    <button id="color-change-button">Click me</button>
+    <p class="content">
+      Having a chat widget on a website can provide several benefits for both
+      website owners and visitors. Here are some reasons why a website should
+      have a chat widget: Improved customer support: A chat widget allows
+      visitors to easily reach out to the website owner or support team for
+      assistance. It provides a convenient channel for real-time communication,
+      allowing quick responses to inquiries or issues. This can enhance customer
+      satisfaction and loyalty. Increased conversions: A chat widget can help
+      address potential customers' questions or concerns promptly, increasing
+      their confidence in making a purchase or taking a desired action on the
+      website. It can lead to higher conversion rates and better sales
+      performance. Enhanced user experience: By offering a chat widget, websites
+      provide an additional communication option that complements traditional
+      contact forms or email. Visitors can receive immediate assistance,
+      reducing frustration and improving the overall user experience.
+      Personalized interactions: Chat widgets enable personalized interactions
+      with visitors. Chat agents can gather relevant information about the
+      visitor's needs and preferences and provide tailored recommendations or
+      solutions. This personalized approach can create a positive impression and
+      build stronger relationships with customers. Lead generation and feedback
+      collection: Chat widgets can serve as a tool for lead generation by
+      capturing visitors' contact information during chat conversations.
+      Additionally, website owners can use chat interactions to collect valuable
+      feedback and insights about their products, services, or user experience.
+      Competitive advantage: Implementing a chat widget can differentiate a
+      website from competitors that lack such interactive features. It shows a
+      commitment to customer service and engagement, giving the website a
+      competitive edge in the market. Proactive engagement: Some chat widget
+      solutions offer proactive engagement features, allowing website owners to
+      initiate chat conversations with visitors based on specific triggers or
+      behaviors. This can help guide visitors, offer assistance, or provide
+      relevant information, leading to increased engagement and conversions.
+      Overall, a chat widget can contribute to better customer service, improved
+      user experience, increased conversions, and valuable insights for website
+      owners. It facilitates real-time communication, builds trust, and supports
+      visitors throughout their journey on the website.
+    </p>
+
+    <div class="linechat-widget">
+      <a href="#">
+        <div class="chatbox">
+          <div class="chattop">
+            <div class="today"><span>Today</span></div>
+            <div class="bubble-wrap">
+              <div class="bubble-logo">
+                <img src="images/logo.jpg" alt="" />
+              </div>
+              <div class="bubble">
+                <p class="name">Piyawut</p>
+                <div>
+                  <img src="images/bubble-left.svg" alt="" class="arrow" />
+                  สวัสดีทุกท่าน
+                </div>
+                <span class="current-time"></span>
+
+                <span class="read">Read</span>
+              </div>
+            </div>
+            <div class="bubble-wrap">
+              <div class="bubble-logo">
+                <img src="images/logo.jpg" alt="" />
+              </div>
+              <div class="bubble">
+                <p class="name">Piyawut</p>
+                <div>
+                  <img src="images/bubble-left.svg" alt="" class="arrow" />
+                  นี่คือข้อความจากไลน์
+                </div>
+                <span class="current-time"></span>
+
+                <span class="read">Read</span>
+              </div>
+            </div>
+          </div>
+          <div class="chatbottom">
+            <img src="images/bottom-baricon.svg" alt="" />
+          </div>
+        </div>
+      </a>
+
+      <div class="chaticon">
+        <div class="chatbutton">
+          <img src="images/arrowdown.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      gsap.to(".chatbox", { scale: 1, duration: 1, ease: "power3" }, 3);
+      gsap.to(
+        ".bubble-wrap",
+        { opacity: 1, y: -10, duration: 1.5, ease: "power3" },
+        4
+      );
+      gsap.to(".read", { opacity: 1, duration: 0.5, ease: "power3" }, 6);
+    </script>
+
+    <script>
+      function displayCurrentTime() {
+        const currentTime = new Date();
+
+        const hours = String(currentTime.getHours()).padStart(2, "0");
+        const minutes = String(currentTime.getMinutes()).padStart(2, "0");
+        const seconds = String(currentTime.getSeconds()).padStart(2, "0");
+
+        const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+        const currentTimeElements =
+          document.getElementsByClassName("current-time");
+
+        // Loop through each matching element and update their content
+        Array.from(currentTimeElements).forEach((element) => {
+          element.textContent = formattedTime;
+        });
+      }
+
+      // Call the displayCurrentTime function to update the time immediately
+      displayCurrentTime();
+    </script>
+
+    <script>
+      // Get a reference to the button element
+      const colorChangeButton = document.getElementById("color-change-button");
+
+      // Define an array of background colors
+      const colors = [
+        "red",
+        "blue",
+        "green",
+        "white",
+        "grey",
+        "yellow",
+        "orange",
+        "purple",
+      ];
+
+      // Add a click event listener to the button
+      colorChangeButton.addEventListener("click", function () {
+        // Generate a random index to select a color from the array
+        const randomIndex = Math.floor(Math.random() * colors.length);
+
+        // Get the randomly selected color
+        const randomColor = colors[randomIndex];
+
+        // Set the background color of the body element
+        document.body.style.backgroundColor = randomColor;
+      });
+    </script>
   </body>
 </html>
